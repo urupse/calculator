@@ -45,9 +45,9 @@ opBtns.forEach((op) => op.addEventListener("click", function(e) {
 }))
 
 ACBtn.addEventListener("click", function() {
-    prev = '';
+    prev = '0';
     cur = '';
-    operator = '';
+    operator = '+';
     prevDisplay.textContent = cur;
     curDisplay.textContent = cur;
 })
