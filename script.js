@@ -60,11 +60,14 @@ delBtn.addEventListener("click", function() {
 function calculate() {
     prev = Number(prev);
     cur = Number(cur);
-    switch (operator) {
-        case '+': prev += cur;
-        case '-': prev -= cur;
-        case '×': prev *= cur;
-        case '÷': prev /= cur;
+    if (operator === '+') {
+        prev += cur;
+    } else if (operator === '-') {
+        prev -= cur;
+    } else if (operator === '×') {
+        prev *= cur;
+    } else {
+        prev /= cur;
     }
     prev = Math.round(prev * 1000000000000) / 1000000000000;
     prev = prev.toString();
