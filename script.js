@@ -10,6 +10,7 @@ const curDisplay = document.querySelector(".cur");
 let operator = '+';
 let prev = '0';
 let cur = '';
+let equalPressed = false;
 
 function addNumber(num) {
     cur += num;
@@ -32,7 +33,10 @@ decimalBtn.addEventListener("click", function() {
 })
 
 function addOp(op) {
-    calculate();
+    if (!equalPressed) {
+        calculate();
+    }
+    equalPressed = false;
     operator = op;
     prev = cur;
     cur = '';
@@ -75,9 +79,10 @@ function calculate() {
 }
 
 equalBtn.addEventListener("click", function() {
-    if (cur != '' && prev != '') {
+    if (cur != '' && prev != '' && !equalPressed) {
         calculate();
-        prevDisplay.textContent = '';
-        curDisplay.textContent = prev;
+        equalPressed = true;
+        prevDisplay.textContent = prev;
+        curDisplay.textContent = '';
     }
 })
