@@ -64,7 +64,7 @@ function calculate() {
         prev += cur;
     } else if (operator === '-') {
         prev -= cur;
-    } else if (operator === '×') {
+    } else if (operator === '*') {
         prev *= cur;
     } else {
         prev /= cur;
